@@ -1,0 +1,7 @@
+= Bash Utils
+
+This is a collection of bash utils that I've written or collected over time. I have this checked out in my *Projects* folder and have pointed my +PATH+ variable to it.
+
+== Utils Overview
+
+* _hamlize_: converts every foo.html.erb file in the current directory to haml, saves it to foo.html.haml and removes the old erb file.

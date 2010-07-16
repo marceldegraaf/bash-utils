@@ -1,0 +1,19 @@
+#!/usr/bin/ruby
+
+#
+# Get all files in this dir
+#
+files = Dir.new('.').entries.reject{|e| e == '.' || e == '..'}
+
+#
+# Loop over the files, converting the erb ones
+#
+files.each do |file|
+  bits = file.split('.')
+  if bits.last == 'erb'
+    haml = bits[0...-1].join('.').concat('.haml')
+    system "html2haml #{file} > #{haml}"
+    system "rm #{file}"
+    puts "File '#{file}' converted to haml: '#{haml}'"
+  end
+end
